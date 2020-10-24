@@ -38,6 +38,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String name;
   String spLastCounter = 'last_counter';
 
   void _incrementCounter() {
@@ -57,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     /// string
 
-    String name = SpUtil.getString("name", defValue: "");
+    name = SpUtil.getString("name", defValue: "");
     Log.d("name: " + name);
 
     /// save object example.
@@ -100,6 +101,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              'name:$name',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
