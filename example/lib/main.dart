@@ -38,8 +38,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String name;
+  String name, time;
+
+  DateTime dateTime;
   String spLastCounter = 'last_counter';
+  DateTime now = DateTime.now();
 
   void _incrementCounter() {
     setState(() {
@@ -84,6 +87,13 @@ class _MyHomePageState extends State<MyHomePage> {
         SpUtil.getObjList("city_list", (v) => City.fromJson(v));
     Log.d("CityList: " + (dataList == null ? "null" : dataList.toString()));
     Log.d(dataList[1].name);
+
+    time = DateUtil.formatDate('YYYY年M月d日 HH时mm分ss秒');
+
+    String dateStr = "2019-07-09 16:16:16";
+    dateTime = DateUtil.getDateTime(dateStr);
+    final millisecond = DateTime.now().millisecondsSinceEpoch;
+    Log.d('millisecond $millisecond');
   }
 
   @override
@@ -94,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
@@ -105,7 +115,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               'name:$name',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            Text(
+              'now:$time',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            Text(
+              'dateTime:$dateTime',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            Text(
+              'getDateTimeByMs:${DateUtil.getDateTimeByMs(1603555660308)}',
+              style: Theme.of(context).textTheme.headline6,
             ),
           ],
         ),
