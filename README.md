@@ -1,4 +1,4 @@
-# windego
+# windego_utils
 
 utils
 

@@ -1,4 +1,4 @@
-library windego;
+library windego_utils;
 
 //SpUtil : SharedPreferences工具类
 export 'src/sp_util.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:windego/windego.dart';
+import 'package:windego_utils/windego_utils.dart';
 import 'package:flutter/foundation.dart';
 
 import 'models.dart';
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
       SpUtil.setInt(spLastCounter, _counter);
-      SpUtil.setString("name", "windego$_counter");
+      SpUtil.setString("name", "windego_utils$_counter");
     });
   }
 

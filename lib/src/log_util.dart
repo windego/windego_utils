@@ -1,6 +1,6 @@
 /// Log Util.
 class Log {
-  static const String _defTag = 'Windego-Log';
+  static const String _defTag = 'windego_utils-Log';
   static bool _debugMode = false; //是否是debug模式,true: log v 不输出.
   static String _tagValue = _defTag;
 

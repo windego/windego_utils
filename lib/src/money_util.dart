@@ -1,5 +1,4 @@
-import 'package:windego/src/num_util.dart';
-import 'package:windego/src/regex_util.dart';
+import 'package:windego_utils/src/num_util.dart';
 
 // changeF2Y                   : 分 转 元, format格式输出.
 // changeFStr2YWithUnit        : 分字符串 转 元, format 与 unit 格式 输出.
