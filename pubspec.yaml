@@ -2,7 +2,7 @@ name: windego_utils
 description: utils
 version: 0.0.1
 author: zhangweijie
-homepage:
+homepage: https://github.com/windego/windego_utils.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
