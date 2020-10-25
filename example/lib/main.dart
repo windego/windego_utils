@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:windego_utils/windego_utils.dart';
+import 'package:windego/windego.dart';
 import 'package:flutter/foundation.dart';
 
 import 'models.dart';
