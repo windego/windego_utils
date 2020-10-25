@@ -1,4 +1,11 @@
 import 'package:windego/src/num_util.dart';
+import 'package:windego/src/regex_util.dart';
+
+// changeF2Y                   : 分 转 元, format格式输出.
+// changeFStr2YWithUnit        : 分字符串 转 元, format 与 unit 格式 输出.
+// changeF2YWithUnit           : 分 转 元, format 与 unit 格式 输出.
+// changeYWithUnit             : 元, format 与 unit 格式 输出.
+// changeY2F                   : 元 转 分.
 
 enum MoneyUnit {
   NORMAL, // 6.00
@@ -17,6 +24,34 @@ class MoneyUtil {
   static const String YUAN = '¥';
   static const String YUAN_ZH = '元';
   static const String DOLLAR = '\$';
+
+  static String format(String moneyTxt, {int unitType = 0}) {
+    // 匹配一个位置：该位置后有3的倍数个数字，该位置的前面不能出现小数点
+    // dart 正则没有/g?
+    RegExp reg = new RegExp(r"\B(?=(\d{3})+(?!\d))");
+    var formatMoney = moneyTxt.replaceAll(reg, ',');
+    return addUnit(formatMoney, unitType);
+  }
+
+  /// with unit.
+  /// 拼接单位.
+  static String addUnit(String moneyTxt, int unit) {
+    if (moneyTxt == null || moneyTxt.isEmpty) return null;
+    switch (unit) {
+      case 0:
+        moneyTxt = moneyTxt;
+        break;
+      case 1:
+        moneyTxt = moneyTxt + ' ' + YUAN_ZH;
+        break;
+      case 2:
+        moneyTxt = YUAN + ' ' + moneyTxt;
+        break;
+      default:
+        break;
+    }
+    return moneyTxt;
+  }
 
   /// fen to yuan, format output.
   /// 分 转 元, format格式输出.

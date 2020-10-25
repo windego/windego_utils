@@ -14,3 +14,12 @@ export 'src/encrypt_util.dart';
 
 // JsonUtil : 简单封装json字符串转对象.
 export 'src/json_util.dart';
+
+// NumUtil : 保留x位小数, 精确加、减、乘、除, 防止精度丢失.
+export 'src/num_util.dart';
+
+// MoneyUtil : 精确转换，元转分，分转元，支持格式输出.
+export 'src/money_util.dart';
+
+// RegexUtil : 正则验证手机号，身份证，邮箱等等.
+export 'src/regex_util.dart';

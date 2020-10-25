@@ -94,6 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
     dateTime = DateUtil.getDateTime(dateStr);
     final millisecond = DateTime.now().millisecondsSinceEpoch;
     Log.d('millisecond $millisecond');
+
+    String money = MoneyUtil.format("11112345", unitType: 2);
+    Log.d('money $money');
   }
 
   @override
