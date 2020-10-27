@@ -23,3 +23,6 @@ export 'src/money_util.dart';
 
 // RegexUtil : 正则验证手机号，身份证，邮箱等等.
 export 'src/regex_util.dart';
+
+// TimerUtil : 倒计时，定时任务.
+export 'src/timer_util.dart';
